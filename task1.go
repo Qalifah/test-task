@@ -60,7 +60,7 @@ func storyStats(input string) (string, string, int, []string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	var collection map[int]string
+	collection := map[int]string{}
 	var wordsLen []int
 	matchedArray := r.FindAllString(input, -1)
 	for _, word := range matchedArray {

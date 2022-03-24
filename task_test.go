@@ -24,3 +24,19 @@ func Test_wholeStory(t *testing.T) {
 		t.Errorf("expected %v, got %v", "ab caba haha", text)
 	}
 }
+
+func Test_storyStats(t *testing.T) {
+	shortest, longest, avgLen, avgLenWords := storyStats("23-ab-48-caba-55-haha")
+	if shortest != "ab" {
+		t.Errorf("expected %v, got %v", "ab", shortest)
+	}
+	if longest != "haha" {
+		t.Errorf("expected %v, got %v", "haha", longest)
+	}
+	if avgLen != 4 {
+		t.Errorf("expected %v, got %v", 4, longest)
+	}
+	if len(avgLenWords) != 1 {
+		t.Errorf("expected len %v, got %v", 1, len(avgLenWords))
+	}
+}
