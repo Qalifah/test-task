@@ -37,3 +37,9 @@ func averageNumber(input string) int {
 	}
 	return intVal / len(matchedArray)
 }
+
+// wholeStory takes the string and returns a text that is composed of all the text words separated by spaces
+// function is easy to implement, should take me at most five minutes to implement.
+func wholeStory(input string) string {
+	return ""
+}
