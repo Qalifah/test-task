@@ -20,6 +20,7 @@ func testValidity(input string) bool {
 
 // averageNumber takes a string and returns the average number from all the numbers
 // function is easy to implement, should take me at most five minutes to implement.
+// took me around 5 minutes to implement
 func averageNumber(input string) int {
 	r, err := regexp.Compile(`[0-9]+`)
 	if err != nil {
