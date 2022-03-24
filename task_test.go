@@ -17,3 +17,10 @@ func Test_averageNumber(t *testing.T) {
 		t.Errorf("expected %v, got %v", 42, avg)
 	}
 }
+
+func Test_wholeStory(t *testing.T) {
+	text := wholeStory("23-ab-48-caba-55-haha")
+	if text != "ab caba haha" {
+		t.Errorf("expected %v, got %v", "ab caba haha", text)
+	}
+}
