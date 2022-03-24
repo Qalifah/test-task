@@ -50,3 +50,9 @@ func wholeStory(input string) string {
 	matchedArray := r.FindAllString(input, -1)
 	return strings.Join(matchedArray, " ")
 }
+
+// storyStats returns the shortest word, the longest word, the average word length and the list (or empty list) of all words from the story that have the length the same as the average length rounded up and down
+// function is fairly hard to implement, should take me at most 12 minutes to implement.
+func storyStats(input string) (string, string, int, []string) {
+	return "", "", 0, nil
+}
