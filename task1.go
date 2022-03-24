@@ -3,6 +3,7 @@ package test_task
 import (
 	"log"
 	"regexp"
+	"strconv"
 )
 
 // testValidity checks if a string is a sequence of numbers followed by dash followed by text
@@ -20,5 +21,18 @@ func testValidity(input string) bool {
 // averageNumber takes a string and returns the average number from all the numbers
 // function is easy to implement, should take me at most five minutes to implement.
 func averageNumber(input string) int {
-	return 0
+	r, err := regexp.Compile(`[0-9]+`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	matchedArray := r.FindAllString(input, -1)
+	var intVal int
+	for _, i := range matchedArray {
+		val, err := strconv.Atoi(i)
+		if err != nil {
+			log.Fatal(err)
+		}
+		intVal += val
+	}
+	return intVal / len(matchedArray)
 }
