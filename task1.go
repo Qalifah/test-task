@@ -41,6 +41,7 @@ func averageNumber(input string) int {
 
 // wholeStory takes the string and returns a text that is composed of all the text words separated by spaces
 // function is easy to implement, should take me at most five minutes to implement.
+// took me around 4 minutes to implement
 func wholeStory(input string) string {
 	r, err := regexp.Compile(`[a-zA-Z]+`)
 	if err != nil {
