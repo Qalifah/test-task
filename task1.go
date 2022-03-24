@@ -16,3 +16,9 @@ func testValidity(input string) bool {
 	}
 	return matched
 }
+
+// averageNumber takes a string and returns the average number from all the numbers
+// function is easy to implement, should take me at most five minutes to implement.
+func averageNumber(input string) int {
+	return 0
+}
