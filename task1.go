@@ -3,6 +3,7 @@ package test_task
 import (
 	"log"
 	"regexp"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -54,5 +55,21 @@ func wholeStory(input string) string {
 // storyStats returns the shortest word, the longest word, the average word length and the list (or empty list) of all words from the story that have the length the same as the average length rounded up and down
 // function is fairly hard to implement, should take me at most 12 minutes to implement.
 func storyStats(input string) (string, string, int, []string) {
-	return "", "", 0, nil
+	r, err := regexp.Compile(`[a-zA-Z]+`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	var collection map[int]string
+	var wordsLen []int
+	matchedArray := r.FindAllString(input, -1)
+	for _, word := range matchedArray {
+		collection[len(word)] = word
+		wordsLen = append(wordsLen, len(word))
+	}
+	sort.Ints(wordsLen)
+	shortestWord := collection[wordsLen[0]]
+	longestWord := collection[wordsLen[len(wordsLen)-1]]
+	averageWordLen := wordsLen[len(wordsLen)/2]
+
+	return shortestWord, longestWord, averageWordLen, []string{collection[averageWordLen]}
 }
