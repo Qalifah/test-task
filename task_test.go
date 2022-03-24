@@ -10,3 +10,10 @@ func Test_testValidity(t *testing.T) {
 		}
 	}
 }
+
+func Test_averageNumber(t *testing.T) {
+	avg := averageNumber("23-ab-48-caba-55-haha")
+	if avg != 42 {
+		t.Errorf("expected %v, got %v", 42, avg)
+	}
+}
