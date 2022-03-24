@@ -4,6 +4,7 @@ import (
 	"log"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 // testValidity checks if a string is a sequence of numbers followed by dash followed by text
@@ -41,5 +42,10 @@ func averageNumber(input string) int {
 // wholeStory takes the string and returns a text that is composed of all the text words separated by spaces
 // function is easy to implement, should take me at most five minutes to implement.
 func wholeStory(input string) string {
-	return ""
+	r, err := regexp.Compile(`[a-zA-Z]+`)
+	if err != nil {
+		log.Fatal(err)
+	}
+	matchedArray := r.FindAllString(input, -1)
+	return strings.Join(matchedArray, " ")
 }
